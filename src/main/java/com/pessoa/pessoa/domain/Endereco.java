@@ -1,13 +1,9 @@
 package com.pessoa.pessoa.domain;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-
-
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,16 +13,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Pessoa {
+public class Endereco {
 	
    @Id
-   @GeneratedValue(strategy = GenerationType.SEQUENCE)
-   private Long id;	
-	
-   private String nome;
-   
-   private String cpf;
-   
-   @OneToOne(cascade = CascadeType.ALL)
-   private Endereco endereco;
+   @GeneratedValue(strategy = GenerationType.AUTO)
+   private Long id;
+   private String rua;
+   private String numero;
+   private String bairro;
 }
